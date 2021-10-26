@@ -10,24 +10,23 @@
 // lots of numbers to be added toghther  <---- loop
 // console.log result
 
-//process.argv  argv <--- is an array of command line arguments
-// console.log('process argv-->', process.argv);
-// process.argv is an array, I want everything in that array, - the first 2 elements
-const slicedArray = process.argv.slice(2);
-// console.log('---->', slicedArray);
 
-// 1 -- for 
-// 2 -- while
-// 3 -- forEach
-// 4 -- for in or of
 const consoleAdder = function(arr) {
     let result = 0;
-    for (let i = 0; i < arr.length; i++) {
-    
-        result += Number(arr[i]); // value of each element that we are looping through;
+    // C style for loops are out of style.... especially in js front-end work
+    // for of or for in...
+    // .forEach()
+    // for (let i = 0; i < arr.length; i++) {
+    for (let val of arr) { // in <---- index // of <------ val 
+        result += Number(val); // value of each element that we are looping through;
     }
+
     return result;
 }
 
+//process.argv  argv <--- is an array of command line arguments
+const slicedArray = process.argv.slice(2);
+
 const answer = consoleAdder(slicedArray);
-console.log(slicedArray + ' sum is = ', answer);
+console.assert(answer === 153, 'SOMETHING IS WRONG!!!');
+console.log(`${slicedArray} sum is = `, answer);
