@@ -14,16 +14,20 @@
 // console.log('process argv-->', process.argv);
 // process.argv is an array, I want everything in that array, - the first 2 elements
 const slicedArray = process.argv.slice(2);
-console.log('---->', slicedArray);
+// console.log('---->', slicedArray);
 
 // 1 -- for 
 // 2 -- while
 // 3 -- forEach
 // 4 -- for in or of
-let result = 0;
-for (let i = 0; i < slicedArray.length; i++) {
-
-    result = result + Number(slicedArray[i]); // value of each element that we are looping through;
+const consoleAdder = function(arr) {
+    let result = 0;
+    for (let i = 0; i < arr.length; i++) {
+    
+        result += Number(arr[i]); // value of each element that we are looping through;
+    }
+    return result;
 }
 
-console.log(result);
+const answer = consoleAdder(slicedArray);
+console.log(slicedArray + ' sum is = ', answer);
