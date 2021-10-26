@@ -4,19 +4,10 @@
 // in and returns a sum of all the numbers.
 
 
-
-////////////////////////////////////////////////
-// wth command line arguguments???
-// lots of numbers to be added toghther  <---- loop
-// console.log result
-
-
 const consoleAdder = function(arr) {
     let result = 0;
     // C style for loops are out of style.... especially in js front-end work
     // for of or for in...
-    // .forEach()
-    // for (let i = 0; i < arr.length; i++) {
     for (let val of arr) { // in <---- index // of <------ val 
         result += Number(val); // value of each element that we are looping through;
     }
